@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>3. TRY LIGHTHOUSE</h2>
+    <h2>3. Select smart cities for observation</h2>
     <section class="sec-white">
       <h3>Select locations</h3>
       <div class="cols-text-3" v-if="locations.length > 0">

@@ -7,7 +7,7 @@
       <section class="sec-white">
         <div class="row">
           <div class="col-md-6">
-            <h3>DEMAND</h3>
+            <h3>Sensors data demand</h3>
             <div>
               <p class="t-break" v-for="(item, i) in asks" :key="i">
                 <b>account: </b>{{ item.account }}<br/>
@@ -22,17 +22,10 @@
             </div>
           </div>
           <div class="col-md-6">
-            <h3>LIABILITIES</h3>
+            <h3>Created smart contract</h3>
             <div>
               <p class="t-break" v-for="(item, i) in lis" :key="i">
                 <a :href="`https://kovan.etherscan.io/address/${item.address}`" target="_blank">{{ item.address }}</a><br/>
-                <b>lighthouse: </b><a :href="`https://kovan.etherscan.io/address/${item.lighthouse}`" target="_blank">{{ item.lighthouse }}</a><br/>
-                <b>from: </b><a :href="`https://kovan.etherscan.io/address/${item.from}`" target="_blank">{{ item.from }}</a><br/>
-                <b>model: </b><a :href="`https://ipfs.io/ipfs/${item.model}`" target="_blank">{{ item.model }}</a><br/>
-                <b>objective: </b><a :href="`https://ipfs.io/ipfs/${item.objective}`" target="_blank">{{ item.objective }}</a><br/>
-                <b>token: </b>{{ item.token }}<br/>
-                <b>promisee: </b>{{ item.promisee }}<br/>
-                <b>promisor: </b>{{ item.promisor }}<br/>
                 <span v-if="item.result != ''">
                   <b>Results from IPFS: </b><a :href="`https://ipfs.io/ipfs/${item.result}`" target="_blank">{{ item.result }}</a><br/>
                   <span v-for="(res, resIndex) in item.resultMessage" :key="resIndex">
@@ -40,8 +33,15 @@
                   </span>
                 </span>
                 <span v-if="item.result == ''">
-                  <b>Results from IPFS: </b>...
+                  <b>Results from IPFS: </b>...<br/>
                 </span>
+                <b>lighthouse: </b><a :href="`https://kovan.etherscan.io/address/${item.lighthouse}`" target="_blank">{{ item.lighthouse }}</a><br/>
+                <b>from: </b><a :href="`https://kovan.etherscan.io/address/${item.from}`" target="_blank">{{ item.from }}</a><br/>
+                <b>model: </b><a :href="`https://ipfs.io/ipfs/${item.model}`" target="_blank">{{ item.model }}</a><br/>
+                <b>objective: </b><a :href="`https://ipfs.io/ipfs/${item.objective}`" target="_blank">{{ item.objective }}</a><br/>
+                <b>token: </b>{{ item.token }}<br/>
+                <b>promisee: </b>{{ item.promisee }}<br/>
+                <b>promisor: </b>{{ item.promisor }}
               </p>
             </div>
           </div>

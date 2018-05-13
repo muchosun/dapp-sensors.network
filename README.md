@@ -1,6 +1,6 @@
 # dapp-robonomics.network
 
-> [demo](https://robonomics.network/net/)
+> [demo](https://robonomics.network/sensors/)
 
 ## Build Setup
 

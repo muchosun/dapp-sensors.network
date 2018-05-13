@@ -2,16 +2,14 @@
   <div>
     <div class="secw-narrow">
       <Step11 />
-      <Step12 />
-      <Step13 v-if="showApprove" :locations="locations" />
+      <Step13 :locations="locations" />
     </div>
-    <Step14 v-if="showApprove" />
+    <Step14 />
   </div>
 </template>
 
 <script>
 import Step11 from './Step11';
-import Step12 from './Step12';
 import Step13 from './Step13';
 import Step14 from './Step14';
 import { SENSORS } from '../config';
@@ -20,7 +18,6 @@ export default {
   name: 'Step1',
   components: {
     Step11,
-    Step12,
     Step13,
     Step14,
   },
@@ -33,15 +30,11 @@ export default {
   data() {
     return {
       locations: SENSORS,
-      showApprove: false,
     };
   },
   mounted() {
     this.$on('network', (data) => {
       this.locations = (data === 0) ? SENSORS : [];
-    });
-    this.$on('approve', (data) => {
-      this.showApprove = data;
     });
   },
 };
